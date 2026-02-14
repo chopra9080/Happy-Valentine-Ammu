@@ -1,0 +1,285 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:radial-gradient(circle at top,#120012,#000);
+color:white;
+overflow-x:hidden;
+}
+
+/* NEON TEXT */
+.neon{
+font-size:40px;
+text-shadow:
+0 0 5px #ff007f,
+0 0 20px #ff007f,
+0 0 40px #ff007f;
+}
+
+/* HERO */
+.hero{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+}
+
+/* 3D HEART */
+.heart-3d{
+width:200px;
+height:200px;
+background:#ff007f;
+position:relative;
+margin:100px auto;
+transform:rotate(-45deg);
+animation:rotateHeart 8s linear infinite;
+box-shadow:0 0 80px #ff007f;
+}
+
+.heart-3d:before,
+.heart-3d:after{
+content:"";
+width:200px;
+height:200px;
+background:#ff007f;
+border-radius:50%;
+position:absolute;
+}
+
+.heart-3d:before{top:-100px;left:0;}
+.heart-3d:after{left:100px;top:0;}
+
+@keyframes rotateHeart{
+0%{transform:rotate(-45deg) rotateY(0);}
+100%{transform:rotate(-45deg) rotateY(360deg);}
+}
+
+/* GALLERY */
+.gallery{
+padding:120px 0;
+overflow:hidden;
+}
+
+.slider{
+display:flex;
+gap:50px;
+animation:slide 40s linear infinite;
+}
+
+.slider img{
+width:350px;
+height:450px;
+object-fit:cover;
+border-radius:25px;
+transition:0.5s;
+box-shadow:0 0 40px rgba(255,0,150,0.7);
+}
+
+.slider img:hover{
+transform:scale(1.2);
+box-shadow:0 0 100px rgba(255,0,150,1);
+}
+
+@keyframes slide{
+from{transform:translateX(0);}
+to{transform:translateX(-50%);}
+}
+
+/* GLASS CARD */
+.glass-card{
+margin:120px auto;
+padding:50px;
+width:80%;
+max-width:600px;
+background:rgba(255,255,255,0.05);
+backdrop-filter:blur(20px);
+border-radius:30px;
+text-align:center;
+box-shadow:0 0 60px rgba(255,0,150,0.5);
+transition:0.5s;
+}
+
+.glass-card:hover{
+transform:scale(1.05);
+box-shadow:0 0 100px rgba(255,0,150,1);
+}
+
+button{
+padding:12px 30px;
+border-radius:30px;
+border:none;
+background:linear-gradient(45deg,#ff007f,#ff4da6);
+color:white;
+margin-top:20px;
+cursor:pointer;
+transition:0.3s;
+box-shadow:0 0 20px rgba(255,0,150,0.7);
+}
+
+button:hover{
+transform:scale(1.1);
+}
+
+/* REVEAL */
+.reveal{
+opacity:0;
+transform:translateY(80px);
+transition:1s ease;
+}
+
+.reveal.active{
+opacity:1;
+transform:translateY(0);
+}
+
+/* MUSIC */
+#musicBtn{
+position:fixed;
+bottom:20px;
+right:20px;
+border-radius:50%;
+}
+
+/* CANVAS */
+#heartCanvas,#fireworks{
+position:fixed;
+top:0;
+left:0;
+pointer-events:none;
+}
+@keyframes fadeOut{
+0%{opacity:1;transform:scale(1);}
+100%{opacity:0;transform:scale(2);}
+}
+
+.subtitle{
+margin-top:20px;
+opacity:0.8;
+font-size:18px;
+}
+
+.section-title{
+text-align:center;
+margin-bottom:60px;
+font-size:30px;
+text-shadow:0 0 20px #ff007f;
+}
+
+/* TIMELINE */
+.timeline{
+padding:120px 20px;
+text-align:center;
+}
+
+.timeline-item{
+margin:60px auto;
+max-width:500px;
+padding:20px;
+border-left:3px solid #ff007f;
+transition:0.5s;
+}
+
+.timeline-item:hover{
+transform:translateX(15px);
+}
+
+/* QUOTE SECTION */
+.quote-section{
+padding:120px 20px;
+text-align:center;
+font-size:28px;
+font-style:italic;
+text-shadow:0 0 25px #ff007f;
+}
+
+/* SMOOTH FADE IN */
+.reveal{
+opacity:0;
+transform:translateY(60px);
+transition:1.2s ease;
+}
+
+.reveal.active{
+opacity:1;
+transform:translateY(0);
+}
+/* GALAXY */
+#galaxy{
+position:fixed;
+top:0;
+left:0;
+z-index:-3;
+}
+
+/* HERO ZOOM EFFECT */
+.hero{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+animation:slowZoom 15s infinite alternate ease-in-out;
+}
+
+@keyframes slowZoom{
+0%{transform:scale(1);}
+100%{transform:scale(1.1);}
+}
+
+.hero-content{
+backdrop-filter:blur(10px);
+padding:40px;
+border-radius:20px;
+}
+
+/* COUNTDOWN */
+#countdown{
+margin-top:20px;
+font-size:22px;
+text-shadow:0 0 15px #ff007f;
+}
+
+/* FASTER GALLERY */
+.slider{
+animation:slide 20s linear infinite;
+}
+
+@keyframes slide{
+from{transform:translateX(0);}
+to{transform:translateX(-50%);}
+}
+
+/* PARALLAX */
+.parallax{
+transition:transform 0.3s ease-out;
+}
+
+/* ROSE PETALS */
+#petals{
+position:fixed;
+top:0;
+left:0;
+pointer-events:none;
+z-index:-1;
+}
+
+
+#loveCounter{
+margin-top:20px;
+font-size:20px;
+text-align:center;
+line-height:1.6;
+}
+
+.highlight{
+color:#ff007f;
+font-weight:bold;
+text-shadow:0 0 15px #ff007f;
+}
